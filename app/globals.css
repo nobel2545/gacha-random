@@ -17,17 +17,194 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color : #252525 ;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.font-english {
+  font-family: 'Koulen';
+  src: url('/path/to/koulen.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-thai {
+  font-family: 'IBM Plex Sans Thai';
+  src: url('/path/to/ibm_plex_sans_thai_bold.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-thaibold {
+  font-family: 'IBM Plex Sans Thai';
+  src: url('/path/to/ibm_plex_sans_thai_bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.center {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  justify-items: center;
+  font-size: 50px;
+  transform: translate(-50% , -50%);
+}
+
+.tag-button {
+  padding: 10px;
+  justify-items: center;
+  min-width: 250px;
+
+  text-align: center;
+  color: #caccda;
+  font-family: Koulen;
+  font-size: 30px;
+
+  background-color: #423835;
+
+  border: 2.5px;
+  border-style: solid;
+  border-color: #caccda;
+  border-radius: 20px;
+}
+
+.tag-tab {
+  background-color: #37302F;
+}
+
+.line {
+  width: 40%; /* กำหนดความกว้างเต็มหน้าจอ */
+  border: none; /* ลบเส้นเส้นแบบพื้นฐาน */
+  border-top: 2px solid #000000; /* สร้างเส้นด้วยสีเทาเข้ม */
+}
+
+.lineup {
+  width: 40%; /* กำหนดความกว้างเต็มหน้าจอ */
+  border: none; /* ลบเส้นเส้นแบบพื้นฐาน */
+  border-top: 2px solid #000000; /* สร้างเส้นด้วยสีเทาเข้ม */
+  transform: rotate(90deg);
+  margin-left: -400px;
+}
+
+.tag-mid {
+  margin-left: 800px;
+}
+
+.tag-mid-down {
+  margin-top: 325px;
+}
+
+.tag-mid-downmak {
+  margin-top: 500px;
+}
+
+.tag-popup {
+  position: fixed;
+  top: 100vh;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transition: top 0ms ease-in-out 300ms;
+}
+
+.tag-overlayup {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+
+.tag-overlay {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 100ms ease-in-out 200ms;
+}
+
+.tag-popup-content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  justify-items: center;
+  transform: translate(-50% , -50%) scale(1.15);
+  width: 95%;
+  max-width: 500px;
+  background: #caccda;
+  padding: 25px;
+  border-radius: 20px;
+  opacity: 0;
+  box-shadow: 0px 2px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 300ms ease-in-out;
+}
+
+.tag-close {
+  position: absolute;
+  right: 25px;
+  top: 0px;
+  font-size: 35px;
+}
+
+.tag-popup.active {
+  top: 0px;
+  transition: top 0ms ease-in-out 0ms;
+}
+
+.tag-overlay.active {
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.tag-popup-content.active {
+  transform: translate(-50%,-50%) scale(1);
+  opacity: 1;
+}
+
+.transition-up {
+  transition: 1;
+}
+
+
+/*animation*/
+
+.container {
+  display: flex;
+  justify-content: center; /* จัดให้เลย์เอาท์อยู่ตรงกลางของหน้าจอ */
+  align-items: center; /* จัดให้เลย์เอาท์อยู่ตรงกลางของหน้าจอ */
+  overflow: hidden; /* ป้องกันการเลื่อนเนื้อหาเกินขอบของหน้าจอ */
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(300%);
   }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+.moving-image {
+  position: fixed;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  animation: slideIn 1000ms ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1000ms ease-in;
 }
