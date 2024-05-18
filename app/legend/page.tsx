@@ -12,7 +12,7 @@ export default function Legend() {
           <img src="legend.svg"className='w-[200px] fade-in' style={{ animationDelay: '0.1s' }}/>
         </div>
     
-        <a href="/animation" className="fixed bottom-8 tag-button right-6 hover:border-black hover:border-3 hover:bg-gray-400 hover:text-black "> next</a>
+        <a href="/animation-legend" className="fixed bottom-8 tag-button right-6 hover:border-black hover:border-3 hover:bg-gray-400 hover:text-black "> next</a>
     </div>
   );
 }

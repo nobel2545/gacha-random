@@ -5,7 +5,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 const RandomPageButton: React.FC = () => {
   const handleRandomPageClick = () => {
-    const pages = ['/salt', '/rare', '/legend'];
+    const pages = ['/salt', '/salt', '/salt', '/salt', '/salt', '/salt', '/salt', '/rare', '/rare', '/legend'];
     const randomIndex = Math.floor(Math.random() * pages.length);
     const randomPage = pages[randomIndex];
     window.location.href = randomPage;
